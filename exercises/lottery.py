@@ -1,24 +1,20 @@
-lottery_numbers = {13, 21, 22, 5, 8}
+import random
 
+# This line creates a set with 6 random numbers
+lottery_numbers = set(random.sample(range(22), 6))
+
+# Here are your players; find out who has the most numbers matching lottery_numbers!
 players = [
-    {
-        'name':'Raul',
-        'numbers':{23, 7, 12, 9, 6}
-    },
-    {
-      'name':'Dave',
-      'numbers':{4, 8, 21, 6, 11}
-    }
+    {'name': 'Rolf', 'numbers': {1, 3, 5, 7, 9, 11}},
+    {'name': 'Charlie', 'numbers': {2, 7, 9, 22, 10, 5}},
+    {'name': 'Anna', 'numbers': {13, 14, 15, 16, 17, 18}},
+    {'name': 'Jen', 'numbers': {19, 20, 12, 7, 3, 5}}
 ]
 
-"""
-For each of the two players, print out a string like this: "Player PLAYER_NAME got 3 numbers right.".
-Of course, replace PLAYER_NAME by their name, and the 3 by the amount of numbers they matched with lottery_numbers.
-You'll have to access each player's name and numbers, and calculate the intersection of their numbers with lottery_numbers.
-Then construct a string and print it out.
+winner = players[0]
 
-Remember: the string must contain the player's name and the amount of numbers they got right!
-"""
+for player in players:
+  if len(lottery_numbers.intersection(player['numbers'])) > len(lottery_numbers.intersection(winner['numbers'])):
+    winner = player
 
-print(f"{players[0]['name']} got {len(players[0]['numbers'].intersection(lottery_numbers))} numbers correctly")
-print(f"{players[1]['name']} got {len(players[1]['numbers'].intersection(lottery_numbers))} numbers correctly")
+print(f'{winner["name"]} won {100**len(winner["numbers"].intersection(lottery_numbers))}')
