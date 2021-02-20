@@ -20,15 +20,14 @@ def delete_movie():
     for film in films:
         if film['Title'] == title:
             films.remove(film)
-            print("f{title} has been removed from the library ")
+            print(f"{title} has been removed from the library ")
             return
-        else:
-            print(f"{title} is not in the movie registry!")
+    print(f"{title} is not in the movie registry!")
 
 
 def list_movies():
     for film in films:
-        print(film)
+        print_film(film)
 
 def search():
     title = input("Enter title of film you want to look up: ")
@@ -38,6 +37,8 @@ def search():
         else:
             return False
 
+def print_film(film):
+    print(f"Title: {film['Title']}\t Director: {film['Director']} \t Year: {film['Year']}")
 action = {
     '1': add_movie,
     '2': list_movies,
