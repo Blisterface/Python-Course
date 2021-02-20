@@ -37,13 +37,18 @@ def search():
         else:
             return False
 
+
+def exit_library():
+    print("Exiting Library...")
+
 def print_film(film):
     print(f"Title: {film['Title']}\t Director: {film['Director']} \t Year: {film['Year']}")
 action = {
     '1': add_movie,
     '2': list_movies,
     '3': delete_movie,
-    '4': search
+    '4': search,
+    'q': exit_library
 }
 
 def main():
@@ -55,11 +60,14 @@ def main():
         print("4-> Check if a movie is in the library")
         print("q-> if you want to quit")
         choice = input("Choose what you want to do from the menu above: ")
-        if choice == 'q':
-            print("Exiting Library...")
-            break
-        stuff = action[choice]
-        stuff()
+        if choice in action:
+            act = action[choice]
+            if act==exit_library:
+                act()
+                break
+            act()
+        else:
+            print("Incorrect option, please choose from the given menu!")
         
 
 
