@@ -1,0 +1,7 @@
+name,age,university,degree
+Joseph,25,Oxford,Computer Science
+Matt,24,University of Cape Town,Film
+Anna,32,Cambridge,Physics
+Lisa,34,MIT,Mathematics
+Rolf,18,Wits,LLB Law
+Stefan,25,University of Cape Town,Mechatronics
