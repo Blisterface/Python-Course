@@ -4,11 +4,9 @@
 
 
 friends = open('people.txt','r')
-names = friends.readlines()
+names_list = friends.readlines()
+names = [line.strip() for line in names_list]
 friends.close()
-
-
-print(names)
 
 friends_list = []
 
@@ -18,10 +16,10 @@ for i in range(3):
     friends_list.append(name)
 
 
-nearby_friends = open('nearby.txt','a')
-for line in names:
-    friend = line.strip()
-    if friend in friends_list:
-        print(f'{friend} is nearby')
-        nearby_friends.write(friend+'\n')
+nearby_friends = open('nearby.txt','w')
+for name in names:
+    if name in friends_list:
+        print(f'{name} is nearby')
+        nearby_friends.write(f'{name}\n')
 
+nearby_friends.close()
