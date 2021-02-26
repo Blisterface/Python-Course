@@ -1,0 +1,26 @@
+[
+    {
+        "make": "Ford",
+        "Model": "Fiesta"
+    },
+    {
+        "make": "Ford",
+        "Model": "Focus"
+    },
+    {
+        "Make": "Volvo",
+        "Model": "XC40"
+    },
+    {
+        "Make": "Volvo",
+        "Model": "XC60"
+    },
+    {
+        "Make": "Volvo",
+        "Model": "XC90"
+    },
+    {
+        "Make": "BMW",
+        "Model": "3 Series"
+    }
+]

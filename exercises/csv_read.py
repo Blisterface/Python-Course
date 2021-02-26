@@ -1,11 +1,9 @@
 # Read lines from a csv file and print out the information from the second line
 
-count = 0
 file = open('csvdata.txt','r')
-while True:
-    line = file.readline()
-    count+=1
-    if not line:
-        break
-    print('Name: {}\t Age: {}\t University: {}\t Degree: {}'.format(line.split(',')))
+lines = [var.strip() for var in file.readlines()]
+lines = lines[1:]
+for line in lines:
+    name,age,uni,deg = line.split(',')
+    print(f'Name: {name}\t Age: {age}\t University: {uni}\t Degree: {deg}')
 file.close()

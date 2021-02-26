@@ -1,0 +1,42 @@
+{
+    "friends":[
+        {
+            "name": "Joseph",
+            "Age": "25",
+            "University": "Oxford",
+            "Degree": "Computer Science"
+        },
+        {
+            "name": "Matt",
+            "Age": "28",
+            "University": "University of Cape Town",
+            "Degree": "Film and Media"
+        },
+
+        {
+            "name": "Anna",
+            "Age": "33",
+            "University": "Cambridge",
+            "Degree": "Physics"
+        },
+        {
+            "name": "Lisa",
+            "Age": "34",
+            "University": "MIT",
+            "Degree": "Mathematics"
+        },
+        {
+            "name": "Rolf",
+            "Age": "23",
+            "University": "Wits",
+            "Degree": "LLB Law"
+        },
+        {
+            "name": "Stefan",
+            "Age": "25",
+            "University": "University of Cape Town",
+            "Degree": "Mechatronics"
+        }
+    ]
+}
+
