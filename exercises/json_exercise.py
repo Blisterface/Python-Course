@@ -12,7 +12,6 @@ file_lines = [line.strip() for line in file.readlines()]
 file.close()
 lines = [var.split(',') for var in file_lines]
 
-print(lines)
 
 clubs = []
 
