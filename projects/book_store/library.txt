@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Jane Eyre",
+        "author": "Charlotte Bronte",
+        "read": true
+    },
+    {
+        "title": "David Copperfield",
+        "author": "Charles Dickens",
+        "read": true
+    },
+    {
+        "title": "Adventures of Oliver Twist",
+        "author": "Charles Dickens",
+        "read": false
+    }
+]

@@ -10,7 +10,7 @@ choice = """
 
 def add_book():
     title = input("Enter book title: ")
-    author = input(f"Enter {title} author")
+    author = input(f"Enter {title} author: ")
     database.add_new_book(title,author)
 
 
@@ -28,14 +28,27 @@ def delete_book():
     database.remove_book(title)
 
 
-action = {'a':add_book, 'l':list_books, 'r':mark_read, 'd':delete_book}
+def exit_app():
+    quit = input("Save library before exiting application (Y/n): ")
+    if quit.capitalize() == 'Y':
+        database.save()
+    
+
+action = {'a':add_book, 'l':list_books, 'r':mark_read, 'd':delete_book,'q':exit_app}
 
 def menu():
-    user_input = input(choice)
-    while user_input != 'q':
-        operation = action[user_input]
-        operation()
+    while True:
         user_input = input(choice)
+        try:
+            operation = action[user_input]
+            if operation == exit_app:
+                operation()
+                break
+            operation()
+        except KeyError:
+            print("Choose valid operation from given the menu...")
+
+
 def main():
     menu()
 
