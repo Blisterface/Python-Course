@@ -1,28 +1,36 @@
+import sqlite3
 import json
 
+file = './library.json'
 
-file = open('./library.txt')
-books = json.load(file)
-file.close()
+library = open(file,'r')
+books = json.load(library)
+library.close()
 print(books)
 
 def save():
     save_books = json.dumps(books,indent=4)
-    with open('./library.txt','w') as library:
-        library.writelines(save_books)
+    with open(file,'w') as f:
+        f.writelines(save_books)
 
 def add_new_book(name,author,read=False):
     book = {"title":name, "author":author, "read":read}
-    books.append(book)
+    with open(file,'a') as library:
+        library.write(f'{book}\n')
+
+def get_books():
+    with open(file,'r') as library:
+        return json.load(library)
 
 
 def display_books():
-    line = "-"*50
+    line = "-"*75
     print(line)
-    print('{:<20s}{:>10s}{:>15s}'.format('Title','Author','Read'))
+    print('{:<30s}{:<30s}{:<10s}'.format('Title','Author','Read'))
     print(line)
-    for var in books:
-        print('{:<20s}{:>10s}{:>10s}'.format(var['title'],var['author'],str(var['read'])))
+    book_list = get_books()
+    for var in book_list:
+        print('{:<30s}{:<30s}{:<10s}'.format(var['title'],var['author'],str(var['read'])))
 
 """
 def remove_book(title):

@@ -5,6 +5,7 @@ with open('csv_file.txt','r') as file:
 
 
 lines = [line.split(',') for line in file_contents]
+print(lines)
 
 data = []
 for line in lines:
